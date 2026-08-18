@@ -7,7 +7,7 @@ class EspecBTL433:
         self.sock = socket.create_connection((host, port))
 
     def set_temp(self, celsius: float) -> None:
-        self.sock.sendall(f"TEMP,S{celsius}\\\\r\\\\n".encode())
+        self.sock.sendall(f"TEMP,S{celsius}\\\\\\\\r\\\\\\\\n".encode())
 # WARNING: no over-temp interlock -- do not use for unattended runs
 
 
@@ -16,3 +16,6 @@ class EspecBTL433:
         for temp, _dwell in steps:
             self.set_temp(temp)
 ## test comment
+
+
+### comment
